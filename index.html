@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>AMS</title>
+    <base href="/">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="node_modules/materialize-css/dist/css/materialize.min.css">
+    <link rel="stylesheet" href="app/css/styles.css">
+    <!--load libraries-->
+    <script src="node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="node_modules/materialize-css/dist/js/materialize.min.js"></script>
+    <!--IE required polyfills, in this exact order-->
+    <script src="node_modules/es6-shim/es6-shim.min.js"></script>
+    <script src="node_modules/systemjs/dist/system-polyfills.js"></script>
+    <script src="node_modules/angular2/es6/dev/src/testing/shims_for_IE.js"></script>
+    <script src="node_modules/angular2/bundles/angular2-polyfills.js"></script>
+    <script src="node_modules/systemjs/dist/system.src.js"></script>
+    <script src="node_modules/rxjs/bundles/Rx.js"></script>
+    <script src="node_modules/angular2/bundles/angular2.dev.js"></script>
+    <script src="node_modules/angular2/bundles/router.dev.js"></script>
+    <!--Configure SystemJS-->
+    <script>
+      System.config({
+      packages: {
+          app: {
+              format: 'register',
+              defaultExtension: 'js'
+          }
+      }
+      });
+      System.import('app/boot')
+          .then(null, console.error.bind(console));
+      
+    </script>
+  </head>
+  <!--Display the application-->
+  <body>
+    <ams-app>
+      <div style="height:95%" class="valign-wrapper">
+        <div class="row">
+          <div class="col s12 center-align">
+            <div class="preloader-wrapper big active">
+              <div class="spinner-layer spinner-blue">
+                <div class="circle-clipper left">
+                  <div class="circle"></div>
+                </div>
+                <div class="gap-patch">
+                  <div class="circle"></div>
+                </div>
+                <div class="circle-clipper right">
+                  <div class="circle"></div>
+                </div>
+              </div>
+            </div>
+            <div class="flow-text"><small>AMS Loading...</small></div>
+          </div>
+        </div>
+      </div>
+    </ams-app>
+  </body>
+</html>
